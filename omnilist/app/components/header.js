@@ -1,4 +1,3 @@
-'use client';
 
 import { AiOutlineSearch } from 'react-icons/ai';
 

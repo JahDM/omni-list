@@ -1,7 +1,7 @@
-
+import MainPageImageCarousel from "./components/mainPageContent"
 
 export default function MainPage() {
   return(
-    <h1>dasdsad</h1>
+    <MainPageImageCarousel/>
   )
 }
