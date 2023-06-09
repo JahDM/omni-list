@@ -25,6 +25,7 @@ The Omnilist project utilizes the following technologies:
 
 - **Backend:**
   * [![C#][C#]][C#-url]
+  * [![MSQLSERVER][MSQLSERVER]][MSQLSERVER-url]
 
 
 
@@ -39,3 +40,5 @@ The Omnilist project utilizes the following technologies:
 [C#-url]: https://learn.microsoft.com/en-us/dotnet/csharp/
 [HTML]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [CSS]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[MSQLSERVER]: https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white
+[MSQLSERVER-url]: https://www.microsoft.com/en-us/sql-server
