@@ -8,3 +8,10 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@layer components {
+  .invisible-div {
+    visibility: hidden;
+    height: 0;
+  };
+}

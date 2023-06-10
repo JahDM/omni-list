@@ -1,12 +1,12 @@
 
 import { AiOutlineSearch } from 'react-icons/ai';
+import HamburgerMenu from './HamburgerMenu';
 
 function Header() {
   return (
     <section className="flex justify-between items-center h-14 bg-green px-4">
       <div className="flex items-center space-x-2">
-        <div className="text-2xl cursor-pointer">&#9776;</div>
-        <div className="text-lg cursor-pointer">Menu</div>
+        <HamburgerMenu/>
       </div>
       <div className="flex items-center space-x-2">
         <div className="bg-white rounded-md p-2 flex items-center">
