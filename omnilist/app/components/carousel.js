@@ -5,15 +5,24 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function ImageCarousel({ carouselImages }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
-    );
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
+      );
+      setIsTransitioning(false);
+    }, 300);
   };
 
   return (
@@ -23,21 +32,24 @@ function ImageCarousel({ carouselImages }) {
           className="absolute left-0 text-3xl text-green cursor-pointer hover:text-6xl"
           onClick={handlePrev}
         />
-        <Image
-          src={carouselImages[currentIndex].url}
-          alt={carouselImages[currentIndex].title}
-          width={280}
-          height={414}
-        />
+        <div className={`transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          <Image
+            className="rounded-2xl"
+            src={carouselImages[currentIndex].url}
+            alt={carouselImages[currentIndex].title}
+            width={280}
+            height={414}
+          />
+        </div>
         <FaChevronRight
           className="absolute right-0 text-3xl text-green cursor-pointer hover:text-6xl"
           onClick={handleNext}
-        />
+        /> 
       </div>
       <div className="flex justify-center mt-4">
-        <h2 className="text-black text-xl font-bold">
+        <h1 className="text-green text-3xl font-bold">
           {carouselImages[currentIndex].title}
-        </h2>
+        </h1>
       </div>
     </section>
   );
