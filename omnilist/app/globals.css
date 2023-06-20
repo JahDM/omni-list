@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: url(/mainpagebackground.svg);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+  .invisible-div {
+    visibility: hidden;
+    height: 0;
+  };
+}
