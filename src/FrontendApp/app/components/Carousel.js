@@ -1,9 +1,10 @@
 'use client';
-import { useState } from "react";
-import Image from "next/image";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-function ImageCarousel({ carouselImages, isModalOpen }) {
+import { useState } from 'react';
+import Image from 'next/image';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+
+function ImageCarousel({ carouselImages }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -26,7 +27,7 @@ function ImageCarousel({ carouselImages, isModalOpen }) {
   };
 
   if (!carouselImages || carouselImages.length === 0) {
-    return null; 
+    return null;
   }
 
   const currentImage = carouselImages[currentIndex];
@@ -35,32 +36,32 @@ function ImageCarousel({ carouselImages, isModalOpen }) {
   }
 
   return (
-    <section className="p-4">
-      {isModalOpen ? null : (
-        <div className="relative flex justify-center items-center">
-          <FaChevronLeft
-            className="absolute left-0 text-3xl text-green cursor-pointer hover:text-6xl"
-            onClick={handlePrev}
-          />
-          <div className={`transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-            <Image
-              className="rounded-2xl"
-              src={currentImage.url}
-              alt={currentImage.title}
-              width={280}
-              height={414}
-            />
-          </div>
-          <FaChevronRight
-            className="absolute right-0 text-3xl text-green cursor-pointer hover:text-6xl"
-            onClick={handleNext}
+    <section className='p-4 z-10'>
+      <div className='relative flex justify-center items-center'>
+        <FaChevronLeft
+          className='absolute left-0 text-3xl text-green cursor-pointer hover:text-6xl'
+          onClick={handlePrev}
+        />
+        <div
+          className={`transition-opacity duration-500 ${
+            isTransitioning ? 'opacity-0' : 'opacity-100'
+          }`}>
+          <Image
+            className='rounded-2xl'
+            src={currentImage.url}
+            alt={currentImage.title}
+            width={280}
+            height={414}
           />
         </div>
-      )}
-      <div className="flex justify-center mt-4">
-        <h1 className="text-green text-3xl font-bold">
-          {currentImage.title}
-        </h1>
+        <FaChevronRight
+          className='absolute right-0 text-3xl text-green cursor-pointer hover:text-6xl'
+          onClick={handleNext}
+        />
+      </div>
+
+      <div className='flex justify-center mt-4'>
+        <h1 className='text-green text-3xl font-bold'>{currentImage.title}</h1>
       </div>
     </section>
   );
