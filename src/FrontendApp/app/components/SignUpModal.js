@@ -30,42 +30,32 @@ const SignUpModal = ({ onClose }) => {
         />
         <form className='flex flex-col items-center'>
           <h2 className='text-navy-blue text-2xl font-bold'>Sign Up</h2>
-          <label className='text-navy-blue mt-4' />
-          Username:
+          <label className='text-navy-blue mt-4 text-2xl'>Username</label>
           <input
             type='text'
             name='username'
-            className='input-field'
+            className='input-field  h-8'
             required
             onChange={handleInputChange}
             value={formData.username}
           />
-          <label className='text-navy-blue mt-4' />
-          Email:
-          <input
-            type='email'
-            name='email'
-            className='input-field'
-            required
-            onChange={handleInputChange}
-            value={formData.email}
-          />
-          <label className='text-navy-blue mt-4' />
-          Password:
+
+          <label className='text-navy-blue mt-4 text-2xl'>Password</label>
           <input
             type='password'
             name='password'
-            className='input-field'
+            className='input-field  h-8'
             required
             onChange={handleInputChange}
             value={formData.password}
           />
-          <label className='text-navy-blue mt-4' />
-          Repeat Password:
+          <label className='text-navy-blue mt-4 text-2xl'>
+            Repeat Password
+          </label>
           <input
             type='password'
             name='password'
-            className='input-field'
+            className='input-field h-8'
             required
             onChange={handleInputChange}
             value={formData.repeat_password}
