@@ -12,12 +12,8 @@ function SearchBar() {
           type='text'
           placeholder='Search'
           className='outline-none border-none bg-transparent w-96'
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyPress}
         />
         <AiOutlineSearch className='text-gray-400'
-        onClick={makeApiRequest}
         />
       </div>
     </div>

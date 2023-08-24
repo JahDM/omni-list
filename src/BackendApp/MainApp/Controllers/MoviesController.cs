@@ -20,16 +20,15 @@ namespace OmniAPI.Main.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> Get()
         {
-            var response = await _movieRepository.GetAllAsync();
-            return Ok(response);
+            return Ok(await _movieRepository.GetAllAsync());
         }
 
         // GET api/<MoviesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST api/<MoviesController>
         [HttpPost]

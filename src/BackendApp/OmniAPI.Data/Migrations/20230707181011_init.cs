@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace OmniAPI.Data.Migrations
 {
     /// <inheritdoc />
@@ -22,7 +24,7 @@ namespace OmniAPI.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ReleaseDate = table.Column<short>(type: "smallint", nullable: false),
-                    Photo = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExternalLink = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -41,7 +43,7 @@ namespace OmniAPI.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ReleaseDate = table.Column<short>(type: "smallint", nullable: false),
-                    Photo = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExternalLink = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -59,7 +61,7 @@ namespace OmniAPI.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ReleaseDate = table.Column<short>(type: "smallint", nullable: false),
-                    Photo = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExternalLink = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -73,9 +75,10 @@ namespace OmniAPI.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    JoinDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    JoinDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -169,6 +172,16 @@ namespace OmniAPI.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Movies",
+                columns: new[] { "Id", "EpisodesOverall", "ExternalLink", "Name", "Photo", "Rating", "ReleaseDate" },
+                values: new object[,]
+                {
+                    { 1, 1, "https://fmovies.to/movie/the-lord-of-the-rings-the-fellowship-of-the-ring-extended-80ln/1-1", "Władca Pierścieni", "https://static.posters.cz/image/750webp/11723.webp", 9.9m, (short)0 },
+                    { 2, 1, "https://fmovies.to/movie/the-northman-qz8kn/1-1", "The Northman", "https://static.bunnycdn.ru/i/cache/images/9/9f/9f3cd9f37c5ee354e2151109a89d2278.jpg", 8m, (short)0 },
+                    { 3, 1, "https://fmovies.to/movie/valhalla-rising-z903/1-1", "Valhalla Rising", "https://static.bunnycdn.ru/i/cache/images/5/5d/5d8a4e3ce83a18d1642db937ff600710.jpg", 7m, (short)0 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_UserBooks_BookId",
                 table: "UserBooks",
@@ -198,6 +211,12 @@ namespace OmniAPI.Data.Migrations
                 name: "IX_UserMovies_UserId",
                 table: "UserMovies",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Email",
+                table: "Users",
+                column: "Email",
+                unique: true);
         }
 
         /// <inheritdoc />

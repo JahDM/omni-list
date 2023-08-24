@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OmniAPI.Main", "MainApp\OmniAPI.Main.csproj", "{3FA2DBE1-47F4-49A5-8398-96FB228D914A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniAPI.Data", "OmniAPI.Data\OmniAPI.Data.csproj", "{A59C3981-E218-4C50-B6AB-A55F2875F445}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OmniAPI.Data", "OmniAPI.Data\OmniAPI.Data.csproj", "{A59C3981-E218-4C50-B6AB-A55F2875F445}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniAPI.Domain", "OmniAPI.Domain\OmniAPI.Domain.csproj", "{87CC2EFC-143D-4239-8142-EFFC493BEB09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OmniAPI.Domain", "OmniAPI.Domain\OmniAPI.Domain.csproj", "{87CC2EFC-143D-4239-8142-EFFC493BEB09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
