@@ -1,7 +1,6 @@
 'use client';
 
 import { AiOutlineSearch } from 'react-icons/ai';
-import { useState } from 'react';
 
 function SearchBar() {
 
@@ -19,5 +18,6 @@ function SearchBar() {
     </div>
   );
 }
+
 
 export default SearchBar;

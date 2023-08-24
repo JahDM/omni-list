@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { AiFillHome } from 'react-icons/ai';
 import { FiFilm } from 'react-icons/fi';
-import { TiVideo } from 'react-icons/ti';
 import { CgGames } from 'react-icons/cg';
 import { ImBooks } from 'react-icons/im';
+
 
 function HamburgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,22 +29,17 @@ function HamburgerMenu() {
             <div className='invisible h-2'></div>
             <li className='text-2xl flex items-center gap-2'>
               <FiFilm />
-              <Link href='/'>Films</Link>
-            </li>
-            <div className='invisible h-2'></div>
-            <li className='text-2xl flex items-center gap-2'>
-              <TiVideo />
-              <Link href='/'>TV Series</Link>
+              <Link href='media/tvseries/'>Cinematography</Link>
             </li>
             <div className='invisible h-2'></div>
             <li className='text-2xl flex items-center gap-2'>
               <CgGames />
-              <Link href='/'>Games</Link>
+              <Link href='media/games/'>Games</Link>
             </li>
             <div className='invisible h-2'></div>
             <li className='text-2xl flex items-center gap-2'>
               <ImBooks />
-              <Link href='/'>Books</Link>
+              <Link href='media/books/'>Books</Link>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,7 @@
 
 import HamburgerMenu from './HamburgerMenu';
 import SearchBar from './SearchBar';
+import LogIn from './LogIn';
 
 function Header() {
   return (
@@ -9,6 +10,7 @@ function Header() {
         <HamburgerMenu/>
       </div>
     <SearchBar />
+    <LogIn />
     </section>
   );
 }

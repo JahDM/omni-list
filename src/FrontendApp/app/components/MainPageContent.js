@@ -1,5 +1,5 @@
-
-import ImageCarousel from "./carousel";
+import React from "react";
+import ImageCarousel from "./Carousel";
 
 function MainPageImageCarousel() {
   const carouselImages = [
@@ -9,11 +9,7 @@ function MainPageImageCarousel() {
     { url: "/theboogeyman.jpg", title: "The Boogeyman" },
   ];
 
-  return (
-    <section>
-      <ImageCarousel carouselImages={carouselImages} />
-    </section>
-  );
+  return <ImageCarousel carouselImages={carouselImages} />;
 }
 
 export default MainPageImageCarousel;
